@@ -1,5 +1,6 @@
 package com.example.india.retrofitsilver.Api_interface;
 
+import com.example.india.retrofitsilver.Api_Response.LoginResponse;
 import com.example.india.retrofitsilver.Api_Response.RegisterResponse;
 
 import retrofit2.Call;
@@ -18,7 +19,20 @@ public interface ApiInterface {     //set interface
             @Field("phoneno") String phoneno,
             @Field("email") String email,
             @Field("password") String password);
+
+
+    @FormUrlEncoded
+    @POST("login_controller.php")//file name in htdocs
+    Call<LoginResponse> LoginResponse(
+            //response class name
+
+            @Field("login") String tag,
+            @Field("name") String name,
+//            @Field("phoneno") String phoneno,
+//            @Field("email") String email,
+            @Field("password") String password);
 }
+
 
 
 
