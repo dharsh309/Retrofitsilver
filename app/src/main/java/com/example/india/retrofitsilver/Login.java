@@ -93,6 +93,8 @@ com.mobsandgeeks.saripaar.Validator validator;
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 Log.e("throwable message",t.getMessage());
+
+
             }
         });
 
