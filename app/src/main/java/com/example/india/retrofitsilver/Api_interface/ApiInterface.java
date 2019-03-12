@@ -2,6 +2,7 @@ package com.example.india.retrofitsilver.Api_interface;
 
 import com.example.india.retrofitsilver.Api_Response.LoginResponse;
 import com.example.india.retrofitsilver.Api_Response.RegisterResponse;
+import com.example.india.retrofitsilver.Api_Response.ViewResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -30,6 +31,17 @@ public interface ApiInterface {     //set interface
             @Field("name") String name,
 //            @Field("phoneno") String phoneno,
 //            @Field("email") String email,
+            @Field("password") String password);
+
+
+    @FormUrlEncoded
+    @POST("userviewapi.php")//file name in htdocs
+    Call<ViewResponse> ViewResponse(
+            //response class name
+            @Field("view") String tag,
+            @Field("name") String name,
+            @Field("phoneno") String phoneno,
+            @Field("email") String email,
             @Field("password") String password);
 }
 
